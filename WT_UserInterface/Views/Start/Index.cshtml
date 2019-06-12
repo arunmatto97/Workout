@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<WT_UserInterface.ViewModels.WorkoutViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "WORKOUTS";
 }
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -34,10 +32,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.Workout_category)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        <td>    
+            <div class="btn btn-success" style="color:ivory">@Html.ActionLink("Start Workout","Workout", "Start", new { id = item.Id })</div>
         </td>
     </tr>
 }
