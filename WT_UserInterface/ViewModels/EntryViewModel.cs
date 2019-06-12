@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using WT_UserInterface.Validations;
+
 namespace DataAccessLayer
 {
     /// <summary>
@@ -19,6 +21,7 @@ namespace DataAccessLayer
         [Required]
         [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
         [Display(Name = "Start Date")]
+        [EntryValidation(ErrorMessage ="Start date cannot be past date")]
         public DateTime start_date { get; set; }
 
 
@@ -29,6 +32,7 @@ namespace DataAccessLayer
 
         [Display(Name = "End Date")]
         [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
+        [EndDateValidation(ErrorMessage ="End date cannot be less than start date")]
         public DateTime end_date { get; set; }
         
         [Display(Name = "End Time")]
