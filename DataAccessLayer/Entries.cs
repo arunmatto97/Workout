@@ -8,6 +8,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccessLayer
 {
+    /// <summary>
+    /// Represents workout entry in the workout table
+    /// </summary>
     public class Entries
     {
         [Key]
