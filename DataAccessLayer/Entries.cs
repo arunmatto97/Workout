@@ -10,6 +10,7 @@ namespace DataAccessLayer
 {
     /// <summary>
     /// Represents workout entry in the workout table
+    /// Second line in comment
     /// </summary>
     public class Entries
     {
