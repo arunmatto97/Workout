@@ -77,7 +77,7 @@ namespace DataAccessLayer
                 try
                 {
                    
-                    var e = Context.entry.Find(item.Workout_id);
+                    var e = Context.entry.Find(item.EntryNo);
                     e.end_date = item.end_date;
                     var change =  Context.SaveChanges() >0;
                     return change;
