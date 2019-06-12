@@ -61,6 +61,14 @@
     <Compile Include="Migrations\201906110939281_Added attributes.Designer.cs">
       <DependentUpon>201906110939281_Added attributes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906120723564_Changes.cs" />
+    <Compile Include="Migrations\201906120723564_Changes.Designer.cs">
+      <DependentUpon>201906120723564_Changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906120734153_Changes1.cs" />
+    <Compile Include="Migrations\201906120734153_Changes1.Designer.cs">
+      <DependentUpon>201906120734153_Changes1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workout.cs" />
@@ -79,6 +87,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906110939281_Added attributes.resx">
       <DependentUpon>201906110939281_Added attributes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906120723564_Changes.resx">
+      <DependentUpon>201906120723564_Changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906120734153_Changes1.resx">
+      <DependentUpon>201906120734153_Changes1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
