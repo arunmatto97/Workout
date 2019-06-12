@@ -7,6 +7,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace DataAccessLayer
 {
+    /// <summary>
+    /// this is test
+    /// </summary>
     public class Workout
     {
         [Key]
