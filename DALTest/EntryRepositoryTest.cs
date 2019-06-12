@@ -33,7 +33,7 @@ namespace DALTest
         [Test]
         public void UpdateTest()
         {
-            var entry = new Entries() { EntryNo = 1, start_date = DateTime.Parse("12/06/2019"), start_time = DateTime.Parse("12:00:23"), end_date = DateTime.Parse("12/06/2019"), end_time = DateTime.Parse("12:00:23"), status = "Inactive" };
+            var entry = new Entries() { EntryNo = 6, end_date = DateTime.Parse("12/06/2019"), end_time = DateTime.Parse("12:00:23"), status = "inactive"};
             Assert.AreEqual(true, EntryRepo.Update(entry));
         }
         [Test]
