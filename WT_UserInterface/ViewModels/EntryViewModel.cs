@@ -4,12 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-namespace DataAccessLayer
+namespace WT_UserInterface.ViewModel
 {
-    /// <summary>
-    /// Represents workout entry in the workout table
-    /// Second line in comment
-    /// </summary>
     public class EntriesViewModel
     {
         public int EntryNo { get; set; }
