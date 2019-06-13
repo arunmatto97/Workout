@@ -29,8 +29,33 @@ namespace WT_UserInterface.Controllers
         }
 
         public ActionResult Workout()
-        {
+        {         
+            return View();
+        }
 
+
+        [HttpPost]
+        public ActionResult Workout(WorkoutViewModel w)
+        {
+            var context = new WorkoutContext();
+            var entry = new Entries();
+            var query = from ent in context.entry
+                        select ent;
+            foreach (Entries e in query)
+            {
+
+            }
+            return View();
+        }
+
+        public ActionResult End_Workout()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult StartWorkout(EntriesViewModel v)
+        {
             return View();
         }
     }

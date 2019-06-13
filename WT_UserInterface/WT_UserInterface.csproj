@@ -173,6 +173,8 @@
     <Content Include="Views\Start\Index.cshtml" />
     <Content Include="Views\Start\Add_workout.cshtml" />
     <Content Include="Views\Start\Workout.cshtml" />
+    <Content Include="Views\Start\StartWorkout.cshtml" />
+    <Content Include="Views\Start\started.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
