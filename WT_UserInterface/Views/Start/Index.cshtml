@@ -10,6 +10,9 @@
 <table  class="table table-striped">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
@@ -19,10 +22,14 @@
             @Html.DisplayNameFor(model => model.Workout_category)
         </th>
         <th></th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
@@ -32,8 +39,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.Workout_category)
         </td>
-        <td>    
-            <div class="btn btn-success" style="color:ivory">@Html.ActionLink("View Workout","Workout", "Start", new { id = item.Id })</div>
+        <td>
+            <div class="btn btn-success" style="color:ivory">@Html.ActionLink("Start Workout", "StartWorkout", "Start", new { Id = item.Id }, null)</div>
+        </td>
+        <td>
+            <div class="btn btn-danger" style="color:ivory">@Html.ActionLink("End Workout", "", "Start", new { Id = item.Id })</div>
         </td>
     </tr>
 }
