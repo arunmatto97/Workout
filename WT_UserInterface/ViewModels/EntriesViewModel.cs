@@ -40,10 +40,11 @@ namespace WT_UserInterface.ViewModels
         public DateTime end_time { get; set; }
 
 
-        public string status { get; set; }
         [Required]
         [Display(Name = "CaloriesBurnt ")]
         public int calories_burnt { get; set; }
+        [Display(Name ="EntryStatus")]
+        public string entry_status { get; set; }
 
     }
 }
