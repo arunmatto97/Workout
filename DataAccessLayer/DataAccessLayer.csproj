@@ -69,6 +69,14 @@
     <Compile Include="Migrations\201906120734153_Changes1.Designer.cs">
       <DependentUpon>201906120734153_Changes1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906130450371_added status field in workout.cs" />
+    <Compile Include="Migrations\201906130450371_added status field in workout.Designer.cs">
+      <DependentUpon>201906130450371_added status field in workout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906130456185_added calories column in workout and entries.cs" />
+    <Compile Include="Migrations\201906130456185_added calories column in workout and entries.Designer.cs">
+      <DependentUpon>201906130456185_added calories column in workout and entries.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workout.cs" />
@@ -93,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906120734153_Changes1.resx">
       <DependentUpon>201906120734153_Changes1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906130450371_added status field in workout.resx">
+      <DependentUpon>201906130450371_added status field in workout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906130456185_added calories column in workout and entries.resx">
+      <DependentUpon>201906130456185_added calories column in workout and entries.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

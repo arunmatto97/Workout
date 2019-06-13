@@ -21,6 +21,8 @@ namespace DataAccessLayer
         public string Workout_title { get; set; }
       
         public string Workout_category { get; set; }
+        public string status { get; set; }
+        public int calories_perminute { get; set; }
         public virtual ICollection<Entries> Entry { get; set; }
     }
 }

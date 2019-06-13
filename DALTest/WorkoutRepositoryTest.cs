@@ -27,7 +27,7 @@ namespace DALTest
         [Test]
         public void AddTest()
         {
-            var workout = new Workout() { Name = "xxx", Workout_category = "pushups", Workout_title = "ABC" };
+            var workout = new Workout() { Name = "xxx", Workout_category = "pushups", Workout_title = "ABC",status = "inactive",calories_perminute =200 };
             var actual = WorkoutRepo.Add(workout);
             Assert.AreEqual(true, actual);
         }

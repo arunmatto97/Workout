@@ -20,8 +20,9 @@ namespace DataAccessLayer
             //throw new NotImplementedException();
             try
             {
-                
-                
+
+                item.end_date = DateTime.Now.Date;
+                item.end_time = DateTime.Now;
                 Context.entry.Add(item);
                 var isAdded = Context.SaveChanges()>0;
                 return isAdded;
@@ -79,7 +80,9 @@ namespace DataAccessLayer
 
                 var e = Context.entry.Find(item.EntryNo);
                     e.end_date = item.end_date;
-                    e.status = item.status;
+                    e.end_date = item.end_time;
+                
+                    
                     Context.SaveChanges();
                     return true;
                 }

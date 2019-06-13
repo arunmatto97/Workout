@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using WT_UserInterface.Validations;
 
-namespace DataAccessLayer
+namespace WT_UserInterface.ViewModels
 {
     /// <summary>
     /// Represents workout entry in the workout table
     /// Second line in comment
     /// </summary>
     public class EntriesViewModel
-    {
+    {   
         public int EntryNo { get; set; }
         public int Workout_id { get; set; }
 

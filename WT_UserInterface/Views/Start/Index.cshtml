@@ -4,7 +4,7 @@
     ViewBag.Title = "WORKOUTS";
 }
 
-<h2>Index</h2>
+<h2>WORKOUTS</h2>
 
 
 <table class="table">
@@ -33,7 +33,7 @@
             @Html.DisplayFor(modelItem => item.Workout_category)
         </td>
         <td>    
-            <div class="btn btn-success" style="color:ivory">@Html.ActionLink("Start Workout","Workout", "Start", new { id = item.Id })</div>
+            <div class="btn btn-success" style="color:ivory">@Html.ActionLink("View Workout","Workout", "Start", new { id = item.Id })</div>
         </td>
     </tr>
 }
