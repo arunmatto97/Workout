@@ -43,6 +43,8 @@ namespace WT_UserInterface.ViewModels
         [Required]
         [Display(Name = "CaloriesBurnt ")]
         public int calories_burnt { get; set; }
+        [Display(Name ="EntryStatus")]
+        public string entry_status { get; set; }
 
     }
 }

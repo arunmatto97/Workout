@@ -33,5 +33,6 @@ namespace DataAccessLayer
         public DateTime end_time { get; set; }
 
         public int calories_burnt { get; set; }
+        public string entry_status { get; set; }
     }
 }
