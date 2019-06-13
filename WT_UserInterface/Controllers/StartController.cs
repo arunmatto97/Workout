@@ -37,7 +37,7 @@ namespace WT_UserInterface.Controllers
         {
             if (ModelState.IsValid)
             {
-                var workout = new Workout() { Id = workoutView.Id, Name = workoutView.Name, Workout_category = workoutView.Workout_category, Workout_title = workoutView.Workout_title, status = "inactive" };
+                var workout = new Workout() { Id = workoutView.Id, Name = workoutView.Name, Workout_category = workoutView.Workout_category, Workout_title = workoutView.Workout_title, status = "inactive",calories_perminute =workoutView.calories_perminute  };
                 var isAdded = workrepo.Add(workout);
                 if (isAdded)
                 {

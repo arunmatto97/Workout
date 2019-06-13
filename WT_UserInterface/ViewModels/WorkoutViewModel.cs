@@ -21,6 +21,9 @@ namespace WT_UserInterface.ViewModels
         [Required]
         [Display(Name ="Category")]
         public string Workout_category { get; set; }
+        [Required]
+        [Display(Name = "CaloriesPerMinute ")]
+        public int calories_perminute { get; set; }
        
     }
 }
