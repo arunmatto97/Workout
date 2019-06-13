@@ -95,5 +95,9 @@ namespace WT_UserInterface.Controllers
 
             }
         }
+        public ActionResult Dashboard()
+        { 
+            return View;
+        }
     }
 }
