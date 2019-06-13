@@ -78,12 +78,12 @@ namespace WT_UserInterface.Controllers
 
      
         [HttpPost]
-        public ActionResult Workoutview(EntriesViewModel view)
+        public ActionResult StartWorkout(EntriesViewModel view)
         {
             if (ModelState.IsValid)
             {
                 var entryrepo = new EntryRepository();
-                var entry = new Entries() { EntryNo = view.EntryNo,Workout_id = view.Workout_id, start_date = view.start_date, start_time = view.start_time};
+                var entry = new Entries() { EntryNo = view.EntryNo,Workout_id = view.Workout_id, start_date = view.start_date, start_time = view.start_time, entry_status = "active"};
                 var isAdded = entryrepo.Add(entry);
                 if (isAdded)
                 {
