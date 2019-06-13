@@ -4,10 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-namespace WT_UserInterface.ViewModel
+using WT_UserInterface.Validations;
+
+namespace WT_UserInterface.ViewModels
 {
+    /// <summary>
+    /// Represents workout entry in the workout table
+    /// Second line in comment
+    /// </summary>
     public class EntriesViewModel
-    {
+    {   
         public int EntryNo { get; set; }
         public int Workout_id { get; set; }
 
@@ -15,6 +21,7 @@ namespace WT_UserInterface.ViewModel
         [Required]
         [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
         [Display(Name = "Start Date")]
+        [EntryValidation(ErrorMessage ="Start date cannot be past date")]
         public DateTime start_date { get; set; }
 
 
@@ -25,6 +32,7 @@ namespace WT_UserInterface.ViewModel
 
         [Display(Name = "End Date")]
         [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
+        [EndDateValidation(ErrorMessage ="End date cannot be less than start date")]
         public DateTime end_date { get; set; }
         
         [Display(Name = "End Time")]
@@ -33,6 +41,9 @@ namespace WT_UserInterface.ViewModel
 
 
         public string status { get; set; }
+        [Required]
+        [Display(Name = "CaloriesBurnt ")]
+        public int calories_burnt { get; set; }
 
     }
 }

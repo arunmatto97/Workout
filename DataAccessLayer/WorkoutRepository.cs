@@ -17,7 +17,7 @@ namespace DataAccessLayer
         }
         public bool Add(Workout item)
         {
-            
+            //item.status = "inactive";
              ObjContext.work.Add(item);
             var add = ObjContext.SaveChanges()>0;
             return add;
@@ -59,7 +59,17 @@ namespace DataAccessLayer
 
         public bool Update(Workout item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var items = ObjContext.work.Find(item.Id);
+                items.status = "active";
+                ObjContext.SaveChanges();
+                return true;
+            }
+            catch (DbException ex)
+            {
+                throw new WTException("Invalid id", ex);
+            }
         }
     }
 }
