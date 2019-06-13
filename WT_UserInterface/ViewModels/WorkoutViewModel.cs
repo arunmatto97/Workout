@@ -24,6 +24,7 @@ namespace WT_UserInterface.ViewModels
         [Required]
         [Display(Name = "CaloriesPerMinute ")]
         public int calories_perminute { get; set; }
+        public string status { get; set; }
        
     }
 }

@@ -75,7 +75,7 @@ namespace WT_UserInterface.Controllers
             if (ModelState.IsValid)
             {
                 var entryrepo = new EntryRepository();
-                var entry = new Entries() { EntryNo = view.EntryNo,Workout_id = view.Workout_id, start_date = view.start_date, start_time = view.start_time };
+                var entry = new Entries() { EntryNo = view.EntryNo,Workout_id = view.Workout_id, start_date = view.start_date, start_time = view.start_time};
                 var isAdded = entryrepo.Add(entry);
                 if (isAdded)
                 {
