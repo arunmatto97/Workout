@@ -1,12 +1,12 @@
 ﻿@model WT_UserInterface.ViewModels.EntriesViewModel
 
 @{
-    ViewBag.Title = "Workout";
+    ViewBag.Title = "StartWorkout";
 }
 
-<h2>Workout</h2>
+<h2>StartWorkout</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
@@ -63,16 +63,16 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.status, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.calories_burnt, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.status, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.calories_burnt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.calories_burnt, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Start" class="btn btn-success" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>

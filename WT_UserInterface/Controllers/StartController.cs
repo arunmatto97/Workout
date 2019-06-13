@@ -22,8 +22,9 @@ namespace WT_UserInterface.Controllers
             var workoutslist = new List<WorkoutViewModel>();
             foreach (Workout w in wl)
             {
-                workoutslist.Add(new WorkoutViewModel { Id = w.Id, Workout_title = w.Workout_title, Workout_category = w.Workout_category });
+                workoutslist.Add(new WorkoutViewModel { Id = w.Id, Workout_title = w.Workout_title, Workout_category = w.Workout_category, Name = w.Name,calories_perminute = w.calories_perminute });
             }
+            //ViewBag.Data = workoutslist;
             return View(workoutslist);
         }
 
@@ -57,18 +58,25 @@ namespace WT_UserInterface.Controllers
         }
 
 
-        public ActionResult Workout(WorkoutViewModel view)
+         
+
+        public ActionResult StartWorkout(int Id)
         {
+            var con = new WorkoutContext();
+            var sel = con.work.Find(Id);
 
-            var lists = workrepo.FindById(view.Id);
+            var new_entry = new EntriesViewModel() { Workout_id = sel.Id, start_date = DateTime.Now.Date, start_time = DateTime.Now};
+           // var selwork = new WorkoutViewModel() {Id =sel.Id, Name=sel.Name, Workout_title = sel.Workout_title, Workout_category=sel.Workout_category,calories_perminute=sel.calories_perminute};
+          //  ViewBag.data = selwork;
 
-
-
-            return View(lists);
-
-
-
+            return View(new_entry);
         }
+
+
+
+
+
+     
         [HttpPost]
         public ActionResult Workoutview(EntriesViewModel view)
         {
