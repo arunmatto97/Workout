@@ -78,11 +78,14 @@ namespace DataAccessLayer
                 try
                 {
 
-                var e = Context.entry.Find(item.EntryNo);
-                    e.end_date = item.end_date;
-                    e.end_date = item.end_time;
-                
-                    
+                //    var e = Context.entry.Find(item.EntryNo);
+                //    e.end_date = item.end_date;
+                //    e.end_date = item.end_time;
+                     var qry = from e in Context.entry where e.entry_status != "completed" || e.Workout_id == item.Workout_id select e;
+                     var close_entry = qry.First();
+                     close_entry.end_date = item.end_date;
+                     close_entry.end_time = item.end_time;
+                     close_entry.entry_status = "completed";
                     Context.SaveChanges();
                     return true;
                 }

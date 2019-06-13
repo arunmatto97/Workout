@@ -11,9 +11,11 @@ namespace WT_UserInterface.Controllers
     public class StartController : Controller
     {
         IRepository<Workout> workrepo;
+        IRepository<Entries> entryrepo;
         public StartController()
         {
             workrepo = new WorkoutRepository();
+            entryrepo = new EntryRepository();
         }
         public ActionResult Index()
         {
@@ -65,7 +67,7 @@ namespace WT_UserInterface.Controllers
             var con = new WorkoutContext();
             var sel = con.work.Find(Id);
 
-            var new_entry = new EntriesViewModel() { Workout_id = sel.Id, start_date = DateTime.Now.Date, start_time = DateTime.Now};
+            var new_entry = new EntriesViewModel() { Workout_id = sel.Id, start_date = DateTime.Now.Date, start_time = DateTime.Now,end_date=DateTime.Now.Date,end_time=DateTime.Now};
            // var selwork = new WorkoutViewModel() {Id =sel.Id, Name=sel.Name, Workout_title = sel.Workout_title, Workout_category=sel.Workout_category,calories_perminute=sel.calories_perminute};
           //  ViewBag.data = selwork;
 
@@ -83,7 +85,7 @@ namespace WT_UserInterface.Controllers
             if (ModelState.IsValid)
             {
                 var entryrepo = new EntryRepository();
-                var entry = new Entries() { EntryNo = view.EntryNo,Workout_id = view.Workout_id, start_date = view.start_date, start_time = view.start_time, entry_status = "active"};
+                var entry = new Entries() { EntryNo = view.EntryNo,Workout_id = view.Workout_id, start_date = view.start_date, start_time = view.start_time, entry_status = "inprogress"};
                 var isAdded = entryrepo.Add(entry);
                 if (isAdded)
                 {
@@ -99,9 +101,32 @@ namespace WT_UserInterface.Controllers
             {
                 ModelState.AddModelError("", "One or more validations failed");
                 return View(view);
-
-
             }
+        }
+
+        public ActionResult EndWorkout(int Id)
+        {
+            var con = new WorkoutContext();
+            var qry = from e in con.entry where e.Workout_id == Id || e.entry_status == "inprogress" select e;
+            var sel = qry.First();
+            var calories = sel.start_time;
+            var end_entry = new EntriesViewModel() { Workout_id = sel.Workout_id, end_date = DateTime.Now.Date, end_time = DateTime.Now, calories_burnt = 200 };
+            
+            return View(end_entry);
+        }
+
+        [HttpPost]
+        public ActionResult EndWorkout(EntriesViewModel uentry)
+        {
+            var con = new WorkoutContext();
+            //var qry = from e in con.entry where e.entry_status != "completed" || e.Workout_id == uentry.Workout_id select e;
+            //var close_entry = qry.First();
+            //close_entry.end_date = uentry.end_date;
+            //close_entry.end_time = uentry.end_time;
+            //close_entry.entry_status = "completed";
+            var close_entry = new Entries() { Workout_id = uentry.Workout_id, end_date = uentry.end_date, end_time = uentry.end_time, calories_burnt = 200 };
+            entryrepo.Update(close_entry);
+            return RedirectToAction("");
         }
     }
 }
