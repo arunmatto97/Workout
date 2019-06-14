@@ -21,6 +21,7 @@ namespace WT_UserInterface.ViewModels
         [Required]
         [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
         [Display(Name = "Start Date")]
+        [DataType(DataType.Date)]
         [EntryValidation(ErrorMessage ="Start date cannot be past date")]
         public DateTime start_date { get; set; }
 

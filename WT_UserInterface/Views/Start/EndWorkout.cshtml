@@ -1,10 +1,10 @@
 ﻿@model WT_UserInterface.ViewModels.EntriesViewModel
 
 @{
-    ViewBag.Title = "StartWorkout";
+    ViewBag.Title = "EndWorkout";
 }
 
-<h2>StartWorkout</h2>
+<h2>EndWorkout</h2>
 
 @using (Html.BeginForm())
 {
@@ -31,48 +31,56 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.start_date, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.HiddenFor(model => model.start_date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.start_date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.HiddenFor(model => model.start_date, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.start_date, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.start_time, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.HiddenFor(model => model.start_time, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.start_time, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.HiddenFor(model => model.start_time, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.start_time, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.HiddenFor(model => model.end_date, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.end_date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.HiddenFor(model => model.end_date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.end_date, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.end_date, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.HiddenFor(model => model.end_time, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.end_time, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.HiddenFor(model => model.end_time, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.end_time, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.end_time, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.HiddenFor(model => model.calories_burnt, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.calories_burnt, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.HiddenFor(model => model.calories_burnt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.calories_burnt, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.calories_burnt, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
+            @Html.HiddenFor(model => model.entry_status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.HiddenFor(model => model.entry_status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.entry_status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Start" class="btn btn-success" />
+                <input type="submit" value="End" class="btn btn-danger" />
             </div>
         </div>
     </div>
