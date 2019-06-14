@@ -71,5 +71,13 @@ namespace DataAccessLayer
                 throw new WTException("Invalid id", ex);
             }
         }
+       public string Display(int id)
+        {
+            var statusqry = from s in ObjContext.work
+                            where s.Id == id
+                            select s.status;
+            return statusqry.ToString();
+
+        }
     }
 }
