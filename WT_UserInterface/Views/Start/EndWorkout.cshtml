@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>EntriesViewModel</h4>
         <hr />
@@ -89,3 +89,26 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@*@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript">
+        $('#WorkoutId').on('change', Calculatecalories);
+        function Calculatecalories() {
+            let WorkoutId = $('# WorkoutId').val();
+            let calories = $('# calories_burnt').val();
+            let startdate = $('#start_date').val();
+            let endDate = $('#end_date').val();
+            let ts = endDate - startdate;
+            let cal = ts * calories;
+            $('#calories_burnt').val(cal);
+
+
+        }
+
+}*@
+
+
+
+
