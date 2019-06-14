@@ -40,6 +40,9 @@
             @Html.DisplayFor(modelItem => item.Workout_category)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
             <div class="btn btn-success" style="color:ivory">@Html.ActionLink("Start Workout", "StartWorkout", "Start", new { Id = item.Id }, null)</div>
         </td>
         <td>

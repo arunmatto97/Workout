@@ -19,8 +19,7 @@ namespace WT_UserInterface.Controllers
         }
         public ActionResult Index()
         {
-            var repo = new WorkoutRepository();
-            var wl = repo.GetAll();
+            var wl = workrepo.GetAll();
             var workoutslist = new List<WorkoutViewModel>();
             foreach (Workout w in wl)
             {
@@ -29,6 +28,15 @@ namespace WT_UserInterface.Controllers
             //ViewBag.Data = workoutslist;
             return View(workoutslist);
         }
+
+        //public ActionResult check(int id)
+        //{
+        //    var context = new WorkoutContext();
+        //    var selected = context.work.Find(id);
+        //    if(selected.status=="inactive")
+        //    return RedirectToAction("StartWorkout");
+        //    return RedirectToAction("EndWorkout");
+        //}
 
         public ActionResult Add_workout()
         {
@@ -57,11 +65,7 @@ namespace WT_UserInterface.Controllers
                 ModelState.AddModelError("", "One or more validations failed");
                 return View(workoutView);
             }
-        }
-
-
-         
-
+        }      
         public ActionResult StartWorkout(int Id)
         {
             var con = new WorkoutContext();
@@ -73,11 +77,6 @@ namespace WT_UserInterface.Controllers
 
             return View(new_entry);
         }
-
-
-
-
-
      
         [HttpPost]
         public ActionResult StartWorkout(EntriesViewModel view)
@@ -118,7 +117,7 @@ namespace WT_UserInterface.Controllers
         [HttpPost]
         public ActionResult EndWorkout(EntriesViewModel uentry)
         {
-            var con = new WorkoutContext();
+            //var con = new WorkoutContext();
             //var qry = from e in con.entry where e.entry_status != "completed" || e.Workout_id == uentry.Workout_id select e;
             //var close_entry = qry.First();
             //close_entry.end_date = uentry.end_date;
