@@ -23,6 +23,8 @@ namespace DataAccessLayer
 
                 item.end_date = DateTime.Now.Date;
                 item.end_time = DateTime.Now;
+                var q = (from w in Context.work where w.Id == item.Workout_id select w).First();
+                q.status = "active";
                 Context.entry.Add(item);
                 var isAdded = Context.SaveChanges()>0;
                 return isAdded;
@@ -61,18 +63,21 @@ namespace DataAccessLayer
         public List<Entries> GetAll()
         {
             try
-            { 
-            
-            
-           
+            {  
             return Context.entry.ToList();
             }
             catch(DbException ex)
             {
                 throw new WTException("NOT FOUND", ex);
             }
-            }
+        }
 
+        public Entries FindLastEntry(int Id)
+        {
+            var con = new WorkoutContext();
+            var qry = from e in con.entry where e.Workout_id == Id || e.entry_status == "inprogress" select e;
+            return qry.First();
+        }
         public bool Update(Entries item)
             {
                 try
@@ -86,7 +91,9 @@ namespace DataAccessLayer
                      close_entry.end_date = item.end_date;
                      close_entry.end_time = item.end_time;
                      close_entry.entry_status = "completed";
-                    Context.SaveChanges();
+                     var q = (from w in Context.work where w.Id == item.Workout_id select w).First();
+                     q.status = "inactive";
+                Context.SaveChanges();
                     return true;
                 }
                 catch (DbException ex)

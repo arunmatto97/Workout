@@ -18,21 +18,12 @@ namespace DataAccessLayer
         public int EntryNo { get; set; }
         [ForeignKey("Workouts")]
         public int Workout_id { get; set; }
-        public Workout Workouts { get; set; }
-        
-        
-        public DateTime start_date { get; set; }
-        
-        
-        public DateTime start_time { get; set; }
-       
-       
-        public DateTime end_date { get; set; }
-       
-     
-        public DateTime end_time { get; set; }
-
-        public int calories_burnt { get; set; }
+        public Workout Workouts { get; set; }       
+        public DateTime start_date { get; set; }       
+        public DateTime start_time { get; set; }             
+        public DateTime? end_date { get; set; }          
+        public DateTime? end_time { get; set; }
+        public int? calories_burnt { get; set; }
         public string entry_status { get; set; }
     }
 }

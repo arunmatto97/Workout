@@ -19,12 +19,12 @@ namespace DataAccessLayer.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            context.work.AddOrUpdate(p => p.Name,
-            new Workout() { Name = "William", Workout_title = "Aerobics", Workout_category = "Build_Strength" },
-             new Workout() { Name = "JohnSon", Workout_title = "PushUps", Workout_category = "Calisthenics" },
-             new Workout() { Name = "Kyathie", Workout_title = "Squats", Workout_category = "Weight_Lifting" },
-              new Workout() { Name = "Watson", Workout_title = "Deadlifts", Workout_category = "Weight_Lifting" },
-              new Workout() { Name = "Kate", Workout_title = "Handstands", Workout_category = "Calisthenics" }
+            context.work.AddOrUpdate(p => p.Workout_title,
+            new Workout() { Workout_title = "Aerobics", Workout_category = "Build_Strength" },
+             new Workout() { Workout_title = "PushUps", Workout_category = "Calisthenics" },
+             new Workout()  { Workout_title = "Squats", Workout_category = "Weight_Lifting" },
+              new Workout()  { Workout_title = "Deadlifts", Workout_category = "Weight_Lifting" },
+              new Workout()   {  Workout_title = "Handstands", Workout_category = "Calisthenics" }
               );
 
 

@@ -81,6 +81,14 @@
     <Compile Include="Migrations\201906130930451_columns added in entries.Designer.cs">
       <DependentUpon>201906130930451_columns added in entries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906140646245_name removed.cs" />
+    <Compile Include="Migrations\201906140646245_name removed.Designer.cs">
+      <DependentUpon>201906140646245_name removed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906140649066_null.cs" />
+    <Compile Include="Migrations\201906140649066_null.Designer.cs">
+      <DependentUpon>201906140649066_null.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workout.cs" />
@@ -114,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906130930451_columns added in entries.resx">
       <DependentUpon>201906130930451_columns added in entries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906140646245_name removed.resx">
+      <DependentUpon>201906140646245_name removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906140649066_null.resx">
+      <DependentUpon>201906140649066_null.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
