@@ -11,16 +11,25 @@ namespace WT_UserInterface.Validations
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var startdate = DateTime.Parse(value.ToString());
-            if (startdate >= DateTime.Now.Date)
+            if (value != null)
             {
-                return ValidationResult.Success;
-            }
-            else
-            {
-                return new ValidationResult(base.ErrorMessage ?? "Cannot be a past date");
+                var startdate = DateTime.Parse(value.ToString());
+                if (startdate >= DateTime.Now.Date)
+                {
+                    return ValidationResult.Success;
+                }
+                else
+                {
+                    return new ValidationResult(base.ErrorMessage ?? "Cannot be a past date");
 
+                }
             }
+            //else
+            //{
+            //    return new ValidationResult(base.ErrorMessage ?? "Cannot be blank");
+            //}
+            return new ValidationResult(base.ErrorMessage ?? "Cannot be blank");
+
         }
     }
 }

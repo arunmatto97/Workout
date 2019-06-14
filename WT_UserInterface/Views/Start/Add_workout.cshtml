@@ -14,13 +14,7 @@
         <h4>WorkoutViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
+       
 
         <div class="form-group">
             @Html.LabelFor(model => model.Workout_title, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -33,14 +27,18 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Workout_category, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                Pushups
+
                 @Html.RadioButtonFor(model => model.Workout_category, "Pushups")
-                WeightLifting
+                Pushups  |
+
                 @Html.RadioButtonFor(model => model.Workout_category, "WeightLifting")
-                Calisthenics
+                WeightLifting  |
+
                 @Html.RadioButtonFor(model => model.Workout_category, "Calisthenics")
-                Buildstrength
+                Calisthenics  |
+
                 @Html.RadioButtonFor(model => model.Workout_category, "Buildstrength")
+                Buildstrength  
 
             </div>
         </div>

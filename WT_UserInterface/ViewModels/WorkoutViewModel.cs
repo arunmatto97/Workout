@@ -11,9 +11,6 @@ namespace WT_UserInterface.ViewModels
     {
         
         public int Id { get; set; }
-        [Required]
-        [Display(Name ="Name")]
-        public string Name { get; set; }
         [StringLength(50,ErrorMessage ="Title cannot be more than 50")]
         [Display(Name ="Workout Title")]
         [Required]

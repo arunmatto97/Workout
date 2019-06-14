@@ -10,8 +10,8 @@ namespace WT_UserInterface.Controllers
 {
     public class StartController : Controller
     {
-        IRepository<Workout> workrepo;
-        IRepository<Entries> entryrepo;
+        WorkoutRepository workrepo;
+        EntryRepository entryrepo;
         public StartController()
         {
             workrepo = new WorkoutRepository();
@@ -23,7 +23,7 @@ namespace WT_UserInterface.Controllers
             var workoutslist = new List<WorkoutViewModel>();
             foreach (Workout w in wl)
             {
-                workoutslist.Add(new WorkoutViewModel { Id = w.Id, Workout_title = w.Workout_title, Workout_category = w.Workout_category, Name = w.Name,calories_perminute = w.calories_perminute });
+                workoutslist.Add(new WorkoutViewModel { Id = w.Id, Workout_title = w.Workout_title, Workout_category = w.Workout_category,calories_perminute = w.calories_perminute, status=w.status});
             }
             //ViewBag.Data = workoutslist;
             return View(workoutslist);
@@ -48,7 +48,7 @@ namespace WT_UserInterface.Controllers
         {
             if (ModelState.IsValid)
             {
-                var workout = new Workout() { Id = workoutView.Id, Name = workoutView.Name, Workout_category = workoutView.Workout_category, Workout_title = workoutView.Workout_title, status = "inactive",calories_perminute =workoutView.calories_perminute  };
+                var workout = new Workout() { Id = workoutView.Id, Workout_category = workoutView.Workout_category, Workout_title = workoutView.Workout_title, status = "inactive",calories_perminute =workoutView.calories_perminute  };
                 var isAdded = workrepo.Add(workout);
                 if (isAdded)
                 {
@@ -71,7 +71,7 @@ namespace WT_UserInterface.Controllers
             var con = new WorkoutContext();
             var sel = con.work.Find(Id);
 
-            var new_entry = new EntriesViewModel() { Workout_id = sel.Id, start_date = DateTime.Now.Date, start_time = DateTime.Now,end_date=DateTime.Now.Date,end_time=DateTime.Now};
+            var new_entry = new EntriesViewModel() { Workout_id = sel.Id, start_date = DateTime.Now.Date, start_time = DateTime.Now,end_date=null,end_time=null};
            // var selwork = new WorkoutViewModel() {Id =sel.Id, Name=sel.Name, Workout_title = sel.Workout_title, Workout_category=sel.Workout_category,calories_perminute=sel.calories_perminute};
           //  ViewBag.data = selwork;
 
@@ -105,10 +105,9 @@ namespace WT_UserInterface.Controllers
 
         public ActionResult EndWorkout(int Id)
         {
-            var con = new WorkoutContext();
-            var qry = from e in con.entry where e.Workout_id == Id || e.entry_status == "inprogress" select e;
-            var sel = qry.First();
-            var calories = sel.start_time;
+            //var con = new WorkoutContext();
+            //var qry = from e in con.entry where e.Workout_id == Id || e.entry_status == "inprogress" select e;
+            var sel = entryrepo.FindLastEntry(Id);
             var end_entry = new EntriesViewModel() { Workout_id = sel.Workout_id, end_date = DateTime.Now.Date, end_time = DateTime.Now, calories_burnt = 200 };
             
             return View(end_entry);
