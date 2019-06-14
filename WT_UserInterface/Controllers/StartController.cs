@@ -71,7 +71,7 @@ namespace WT_UserInterface.Controllers
             var con = new WorkoutContext();
             var sel = con.work.Find(Id);
 
-            var new_entry = new EntriesViewModel() { Workout_id = sel.Id, start_date = DateTime.Now.Date, start_time = DateTime.Now,end_date=DateTime.Now.Date,end_time=DateTime.Now};
+            var new_entry = new EntriesViewModel() { Workout_id = sel.Id, start_date = DateTime.Now.Date, start_time = DateTime.Now};
            // var selwork = new WorkoutViewModel() {Id =sel.Id, Name=sel.Name, Workout_title = sel.Workout_title, Workout_category=sel.Workout_category,calories_perminute=sel.calories_perminute};
           //  ViewBag.data = selwork;
 
@@ -126,6 +126,29 @@ namespace WT_UserInterface.Controllers
             var close_entry = new Entries() { Workout_id = uentry.Workout_id, end_date = uentry.end_date, end_time = uentry.end_time, calories_burnt = 200 };
             entryrepo.Update(close_entry);
             return RedirectToAction("");
+        }
+        public int GetCalories(int id)
+        {
+
+            var items = entryrepo.FindById(id);
+            var work = workrepo.FindById(id);
+            if (items.entry_status == "inprogress")
+            {
+                var from = items.start_date;
+                var to = items.end_date;
+                TimeSpan ts = from - to;
+                var tymdiff = ts.Minutes;
+                if (work.status == "active")
+                {
+                    var cal = work.calories_perminute;
+                    var calories = items.calories_burnt;
+                    calories = cal * tymdiff;
+                    return calories;
+                }
+
+            }
+
+            return Json(JsonRequestBehavior.AllowGet);
         }
     }
 }
