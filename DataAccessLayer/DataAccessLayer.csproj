@@ -81,6 +81,10 @@
     <Compile Include="Migrations\201906130930451_columns added in entries.Designer.cs">
       <DependentUpon>201906130930451_columns added in entries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906141206595_mig.cs" />
+    <Compile Include="Migrations\201906141206595_mig.Designer.cs">
+      <DependentUpon>201906141206595_mig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workout.cs" />
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906130930451_columns added in entries.resx">
       <DependentUpon>201906130930451_columns added in entries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141206595_mig.resx">
+      <DependentUpon>201906141206595_mig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

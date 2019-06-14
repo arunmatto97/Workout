@@ -134,6 +134,7 @@
     <Compile Include="Validations\EndDateValidation.cs" />
     <Compile Include="Validations\EntryValidation.cs" />
     <Compile Include="ViewModels\EntriesViewModel.cs" />
+    <Compile Include="ViewModels\ReportViewModel.cs" />
     <Compile Include="ViewModels\WorkoutViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +177,7 @@
     <Content Include="Views\Start\Add_workout.cshtml" />
     <Content Include="Views\Start\StartWorkout.cshtml" />
     <Content Include="Views\Start\EndWorkout.cshtml" />
+    <Content Include="Views\Start\View_Report.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

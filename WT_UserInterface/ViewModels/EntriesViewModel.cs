@@ -32,6 +32,7 @@ namespace WT_UserInterface.ViewModels
         public DateTime start_time { get; set; }
 
         [Display(Name = "End Date")]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
         [EndDateValidation(ErrorMessage ="End date cannot be less than start date")]
         public DateTime end_date { get; set; }
@@ -43,7 +44,7 @@ namespace WT_UserInterface.ViewModels
 
         [Required]
         [Display(Name = "CaloriesBurnt ")]
-        public int calories_burnt { get; set; }
+        public int ? calories_burnt { get; set; }
         [Display(Name ="EntryStatus")]
         public string entry_status { get; set; }
 
