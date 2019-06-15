@@ -123,8 +123,11 @@ namespace WT_UserInterface.Controllers
             //close_entry.end_time = uentry.end_time;
             //close_entry.entry_status = "completed";
             var close_entry = new Entries() { Workout_id = uentry.Workout_id, end_date = uentry.end_date, end_time = uentry.end_time, calories_burnt = 200 };
-            entryrepo.Update(close_entry);
-            return RedirectToAction("");
+            if (entryrepo.Update(close_entry))
+            {
+                return RedirectToAction("");
+            }
+            return View();
         }
     }
 }

@@ -33,7 +33,8 @@ namespace WT_UserInterface.ViewModels
 
         [Display(Name = "End Date")]
         [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
-       // [EndDateValidation(ErrorMessage ="End date cannot be less than start date")]
+        [DataType(DataType.Date)]
+        // [EndDateValidation(ErrorMessage ="End date cannot be less than start date")]
         public DateTime? end_date { get; set; }
         
         [Display(Name = "End Time")]
