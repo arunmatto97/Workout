@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using WT_UserInterface.ViewModels;
 using DataAccessLayer;
-using System.Data.Entity.Infrastructure;
+
 
 namespace WT_UserInterface.Controllers
 {
@@ -76,7 +76,7 @@ namespace WT_UserInterface.Controllers
             var con = new WorkoutContext();
             var sel = con.work.Find(Id);
 
-            var new_entry = new EntriesViewModel() { Workout_id = sel.Id, start_date = DateTime.Now.Date, start_time = DateTime.Now,end_date=null,end_time=DateTime.Parse("00:00:00")};
+            var new_entry = new EntriesViewModel() { Workout_id = sel.Id, start_date = DateTime.Now.Date, start_time = DateTime.Now,end_date= DateTime.MaxValue,end_time=DateTime.Parse("00:00:00")};
            // var selwork = new WorkoutViewModel() {Id =sel.Id, Name=sel.Name, Workout_title = sel.Workout_title, Workout_category=sel.Workout_category,calories_perminute=sel.calories_perminute};
           //  ViewBag.data = selwork;
 

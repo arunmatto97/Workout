@@ -122,7 +122,7 @@ namespace DataAccessLayer
                       select Obj;
             var cal1 = cal.First().calories_perminute;
             var calories = en.calories_burnt;
-            calories =(cal1 * ts1)/60;
+            calories = (cal1 * ts1);
             if (calories < 0 )
             {
                 calories = 200;

@@ -2,7 +2,8 @@
 
 @{
     ViewBag.Title = "StartWorkout";
-    var end_date = DateTime.Now;
+   // var end_date = Model.start_date;
+
 }
 
 <h2>StartWorkout</h2>
@@ -46,12 +47,13 @@
                 @Html.ValidationMessageFor(model => model.start_time, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        
+        
         <div class="form-group">
-            @Html.HiddenFor(model => end_date, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.HiddenFor(model => model.end_date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.HiddenFor(model => end_date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => end_date, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.end_date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.end_date, "", new { @class = "text-danger" })
             </div>
         </div>
 
