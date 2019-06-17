@@ -134,5 +134,30 @@ namespace WT_UserInterface.Controllers
             
             return RedirectToAction("");
         }
+
+        public ActionResult View_Report()
+        {
+            return View();
+
+             // var entries = entryrepo.Update(close_entry);
+            
+           // return RedirectToAction("");
+        }
+        public ActionResult Report_Data(EntriesViewModel sd, EntriesViewModel ed)
+        {
+
+            var wtit = entryrepo.GetAll();
+            var reportlist = new List<ReportViewModel>();
+            foreach (var w in wtit)
+            {
+                if (w.start_date >= sd.start_date || w.end_date <= ed.end_date)
+                {
+                    // var workouttitle = workrepo.GetAll().Find(w.Workout_id);
+                    reportlist.Add(new ReportViewModel { Workout_id = w.Workout_id, EntryNo = w.EntryNo, start_time = w.start_time, end_time = w.end_time, entry_status = w.entry_status, calories_burnt = w.calories_burnt });
+                }
+            }
+            return View(reportlist);
+
+        }
     }
 }
