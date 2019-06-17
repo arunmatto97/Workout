@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WT_UserInterface.ViewModels.ReportViewModel>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Workout_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.start_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.end_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entry_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calories_burnt)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntryNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Workout_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.start_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.end_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entry_status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calories_burnt)
+        </td>
+        
+    </tr>
+}
+
+</table>

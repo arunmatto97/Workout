@@ -10,9 +10,14 @@ namespace WT_UserInterface.ViewModels
 {
     public class ReportViewModel
     {
-        public Entries Work{ get; set; }
+        public EntriesViewModel Work{ get; set; }
         public Workout Works{ get; set; }
+        public int EntryNo { get; set; }
+        public int Workout_id { get; set; }
+        public DateTime start_time { get; set; }
+        public DateTime? end_time { get; set; }
+        public string entry_status { get; set; }
+        public int? calories_burnt { get; set; }
        
-           
-}
+    }
 }

@@ -3,55 +3,53 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <h2>workouts</h2>
 
 
 
-        <table class="table-striped" style="box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);" width="1000" height="200">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Workout_title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Workout_category)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.calories_perminute)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.status)
-                </th>
-                <th></th>
-            </tr>
+<table class = "table table-striped" style="box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);" width="1000" height="200">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Workout_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Workout_category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calories_perminute)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th></th>
+    </tr>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Workout_title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Workout_category)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.calories_perminute)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.status)
-                    </td>
-                    <td>
-                        @if (item.status == "inactive")
-                        {
-                            @Html.ActionLink("Start Workout", "StartWorkout", "Start", new { Id = item.Id }, new { @class = "btn btn-success" })
-                        }
-                        @if (item.status == "active")
-                        {
-                            @Html.ActionLink("End Workout", "EndWorkout", "Start", new { Id = item.Id }, new { @class = "btn btn-danger" })
-                        }
-                    </td>
-                </tr>
-            }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Workout_title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Workout_category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.calories_perminute)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @if (item.status == "inactive")
+                {
+                    @Html.ActionLink("Start Workout", "StartWorkout", "Start", new { Id = item.Id }, new { @class = "btn btn-success" })
+                }
+                @if (item.status == "active")
+                {
+                    @Html.ActionLink("End Workout", "EndWorkout", "Start", new { Id = item.Id }, new { @class = "btn btn-danger" })
+                }
+            </td>
+        </tr>
+    }
 
-        </table>
-   
+</table>

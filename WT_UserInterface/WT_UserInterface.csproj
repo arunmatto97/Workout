@@ -180,6 +180,7 @@
     <Content Include="Views\Start\StartWorkout.cshtml" />
     <Content Include="Views\Start\EndWorkout.cshtml" />
     <Content Include="Views\Start\View_Report.cshtml" />
+    <Content Include="Views\Start\Report_Data.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -89,6 +89,14 @@
     <Compile Include="Migrations\201906140649066_null.Designer.cs">
       <DependentUpon>201906140649066_null.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906151011039_report.cs" />
+    <Compile Include="Migrations\201906151011039_report.Designer.cs">
+      <DependentUpon>201906151011039_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906151037013_view.cs" />
+    <Compile Include="Migrations\201906151037013_view.Designer.cs">
+      <DependentUpon>201906151037013_view.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workout.cs" />
@@ -128,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906140649066_null.resx">
       <DependentUpon>201906140649066_null.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906151011039_report.resx">
+      <DependentUpon>201906151011039_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906151037013_view.resx">
+      <DependentUpon>201906151037013_view.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
