@@ -14,8 +14,6 @@ namespace DataAccessLayer
     {
         [Key]
         public int Id { get; set; }
-       
-        public string Name { get; set; }
         [StringLength(50)]
         
         public string Workout_title { get; set; }

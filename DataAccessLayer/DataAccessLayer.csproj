@@ -81,9 +81,13 @@
     <Compile Include="Migrations\201906130930451_columns added in entries.Designer.cs">
       <DependentUpon>201906130930451_columns added in entries.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906141206595_mig.cs" />
-    <Compile Include="Migrations\201906141206595_mig.Designer.cs">
-      <DependentUpon>201906141206595_mig.cs</DependentUpon>
+    <Compile Include="Migrations\201906140646245_name removed.cs" />
+    <Compile Include="Migrations\201906140646245_name removed.Designer.cs">
+      <DependentUpon>201906140646245_name removed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906140649066_null.cs" />
+    <Compile Include="Migrations\201906140649066_null.Designer.cs">
+      <DependentUpon>201906140649066_null.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,8 +123,11 @@
     <EmbeddedResource Include="Migrations\201906130930451_columns added in entries.resx">
       <DependentUpon>201906130930451_columns added in entries.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906141206595_mig.resx">
-      <DependentUpon>201906141206595_mig.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906140646245_name removed.resx">
+      <DependentUpon>201906140646245_name removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906140649066_null.resx">
+      <DependentUpon>201906140649066_null.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +135,10 @@
       <Project>{40a075ca-cb13-4eb1-9fb1-953f28aa78c4}</Project>
       <Name>WT_Exception</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
