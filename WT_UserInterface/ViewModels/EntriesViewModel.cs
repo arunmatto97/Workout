@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using WT_UserInterface.Validations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
+using System.Data.Entity.Infrastructure;
 
 namespace WT_UserInterface.ViewModels
 {
@@ -19,8 +22,9 @@ namespace WT_UserInterface.ViewModels
 
 
         [Required]
-        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Start Date")]
+        //[Column(TypeName = "DateTime")]
         [DataType(DataType.Date)]
         [EntryValidation(ErrorMessage ="Start date cannot be past date")]
         public DateTime start_date { get; set; }
@@ -28,23 +32,27 @@ namespace WT_UserInterface.ViewModels
 
         [Required]
         [Display(Name = "Start Time")]
+       // [Column(TypeName = "DateTime")]
         [DisplayFormat(DataFormatString = "{0:hh:mm:ss}")]
         public DateTime start_time { get; set; }
 
         [Display(Name = "End Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        //[Column(TypeName = "DateTime")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
-       // [EndDateValidation(ErrorMessage ="End date cannot be less than start date")]
+        [EndDateValidation(ErrorMessage ="End date cannot be less than start date")]
         public DateTime? end_date { get; set; }
         
         [Display(Name = "End Time")]
+        
+        //[Column(TypeName = "DateTime")]
         [DisplayFormat(DataFormatString = "{0:hh:mm:ss}")]
-        public DateTime? end_time { get; set; }
+        public DateTime end_time { get; set; }
 
 
         [Required]
         [Display(Name = "CaloriesBurnt ")]
-        public int ? calories_burnt { get; set; }
+        public int calories_burnt { get; set; }
         [Display(Name ="EntryStatus")]
         public string entry_status { get; set; }
 

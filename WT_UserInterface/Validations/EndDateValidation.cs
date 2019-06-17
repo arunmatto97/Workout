@@ -14,17 +14,22 @@ namespace WT_UserInterface.Validations
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var entrydate = (EntriesViewModel)validationContext.ObjectInstance;
-
-            if (entrydate.end_date >= entrydate.start_date)
+            if (value != null)
             {
-                return ValidationResult.Success;
-            }
-            else
-            {
-                return new ValidationResult(base.ErrorMessage ?? "Cannot be a less than start  date");
+                var entrydate = (EntriesViewModel)validationContext.ObjectInstance;
 
+                if (entrydate.end_date >= entrydate.start_date)
+                {
+                    return ValidationResult.Success;
+                }
+                else
+                {
+                    return new ValidationResult(base.ErrorMessage ?? "Cannot be a less than start  date");
+
+                }
             }
+                return new ValidationResult(base.ErrorMessage ?? "Cannot be blank");
+            
         }
     }
 }

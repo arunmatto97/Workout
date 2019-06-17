@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "EndWorkout";
+    var end_date = DateTime.Now;
+
 }
 
 <h2>EndWorkout</h2>
@@ -49,8 +51,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.end_date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.end_date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.end_date, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => end_date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => end_date, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -63,9 +65,9 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.calories_burnt, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.HiddenFor(model => model.calories_burnt, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.calories_burnt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.HiddenFor(model => model.calories_burnt, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.calories_burnt, "", new { @class = "text-danger" })
             </div>
         </div>
